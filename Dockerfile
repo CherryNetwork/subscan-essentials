@@ -13,7 +13,7 @@ FROM buildpack-deps:buster-scm
 WORKDIR subscan
 COPY configs configs
 COPY configs/redis.toml.example configs/redis.toml
-COPY configs/mysql.toml.example configs/mysql.toml
+COPY configs/mysql-test.toml configs/mysql.toml
 COPY configs/http.toml.example configs/http.toml
 
 COPY --from=builder /subscan/cmd/subscan cmd/subscan

@@ -4,6 +4,8 @@ cmd/cmd
 cmd/subscan
 configs/http.toml
 configs/mysql.toml
+configs/mysql-test.toml
+configs/mysql-prod.toml
 configs/redis.toml
 log/*
 !log/.gitkeep
