@@ -10,7 +10,7 @@ var (
 	AddressType               = GetEnv("SUBSTRATE_ADDRESS_TYPE", "1")
 	BalanceAccuracy           = GetEnv("SUBSTRATE_ACCURACY", "10")
 	CommissionAccuracy        = GetEnv("COMMISSION_ACCURACY", "9")
-	WSEndPoint                = GetEnv("CHAIN_WS_ENDPOINT", "wss://polkadot.api.onfinality.io/public-ws")
+	WSEndPoint                = GetEnv("CHAIN_WS_ENDPOINT", "wss://testnet-seeder.cherrynetwork.dev")
 	NetworkNode               = GetEnv("NETWORK_NODE", "polkadot")
 	IsProduction              = os.Getenv("DEPLOY_ENV") == "prod"
 )
