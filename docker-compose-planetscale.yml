@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  planetscale:
+    image: planetscale/pscale:latest
+    networks:
+      - app_net
+    ports:
+      - "3306:3306"
+    entrypoint: ["/bin/sh", "-c"]
+    command: ["pscale connect --host `hostname -i | awk '{print $$1}'` test main"]
+
+  redis:
+    image: redis
+    ports:
+      - '6379:6379'
+    volumes:
+      - ./data/redis:/data
+    networks:
+      - app_net
+
+networks:
+  app_net:
+    external: true

@@ -5,11 +5,11 @@ services:
     build: .
     image: subscan/api
     environment: &app_base
-      MYSQL_HOST: mysql
-      MYSQL_PASS: 'helloload'
-      # Name of the database subscan will connect to and use
-      # this db must exist
-      MYSQL_DB: 'subscan'
+      # MYSQL_HOST: mysql
+      # MYSQL_PASS: 'helloload'
+      # # Name of the database subscan will connect to and use
+      # # this db must exist
+      MYSQL_DB: 'test'
       REDIS_ADDR: redis:6379
       CHAIN_WS_ENDPOINT: 'wss://testnet-seeder.cherrynetwork.dev'
       # the types file used for the chain as:
