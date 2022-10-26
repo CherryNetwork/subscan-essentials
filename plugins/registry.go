@@ -4,6 +4,7 @@ import (
 	"github.com/itering/subscan-plugin"
 	"github.com/itering/subscan/plugins/balance"
 	"github.com/itering/subscan/plugins/system"
+	"github.com/itering/subscan/plugins/account"
 	"reflect"
 	"strings"
 )
@@ -16,6 +17,7 @@ var RegisteredPlugins = make(map[string]PluginFactory)
 func init() {
 	registerNative(balance.New())
 	registerNative(system.New())
+	registerNative(account.New())
 }
 
 func register(name string, f interface{}) {
