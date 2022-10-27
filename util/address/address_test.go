@@ -1,10 +1,11 @@
 package address
 
 import (
-	"github.com/itering/subscan/util"
-	"github.com/stretchr/testify/assert"
 	"strconv"
 	"testing"
+
+	"github.com/itering/subscan/util"
+	"github.com/stretchr/testify/assert"
 )
 
 var testCases = []struct {
@@ -22,7 +23,7 @@ var testCases = []struct {
 
 func Test_SS58Address(t *testing.T) {
 	for _, test := range testCases {
-		util.AddressType = strconv.Itoa(test.prefix)
+		util.AddressType = strconv.Itoa(42)
 		assert.Equal(t, SS58Address(test.pk), test.address)
 	}
 }

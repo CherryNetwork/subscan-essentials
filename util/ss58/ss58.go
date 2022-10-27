@@ -9,7 +9,7 @@ import (
 func Decode(address string, addressType int) string {
 	checksumPrefix := []byte("SS58PRE")
 	ss58Format := base58.Decode(address)
-	if len(ss58Format) == 0 || ss58Format[0] != byte(addressType) {
+	if len(ss58Format) == 0 || ss58Format[0] != byte(42) {
 		return ""
 	}
 	var checksumLength int

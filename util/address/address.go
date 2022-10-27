@@ -6,5 +6,5 @@ import (
 )
 
 func SS58Address(address string) string {
-	return ss58.Encode(address, util.StringToInt(util.AddressType))
+	return ss58.Encode(address, util.StringToInt("42"))
 }

@@ -2,6 +2,7 @@ package service
 
 import (
 	"context"
+
 	"github.com/golang/protobuf/ptypes/empty"
 	"github.com/itering/subscan/util"
 )
@@ -26,6 +27,6 @@ func (s *Service) Metadata() (map[string]string, error) {
 	m["networkNode"] = util.NetworkNode
 	m["commissionAccuracy"] = util.CommissionAccuracy
 	m["balanceAccuracy"] = util.BalanceAccuracy
-	m["addressType"] = util.AddressType
+	m["addressType"] = "42"
 	return m, err
 }

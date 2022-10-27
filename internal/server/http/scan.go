@@ -3,6 +3,7 @@ package http
 import (
 	"context"
 	"fmt"
+
 	bm "github.com/go-kratos/kratos/pkg/net/http/blademaster"
 	"github.com/go-kratos/kratos/pkg/net/http/blademaster/binding"
 	"github.com/itering/subscan/plugins"
@@ -69,13 +70,15 @@ func extrinsics(c *bm.Context) {
 		query = append(query, "is_signed = 1")
 	}
 	if p.Address != "" {
-		account := ss58.Decode(p.Address, util.StringToInt(util.AddressType))
+
+		account := ss58.Decode(p.Address, util.StringToInt("42"))
 		if account == "" {
 			c.JSON(nil, util.InvalidAccountAddress)
 			return
 		}
-		query = append(query, fmt.Sprintf("is_signed = 1 and account_id = '%s'", account))
+		query = append(query, fmt.Sprintf("is_signed = 1 and account_id = '0x%s'", account))
 	}
+
 	extrinsics, count := svc.GetExtrinsicList(p.Page, p.Row, "desc", query...)
 	c.JSON(map[string]interface{}{
 		"extrinsics": extrinsics, "count": count,

@@ -4,6 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+
 	"github.com/go-kratos/kratos/pkg/log"
 	"github.com/itering/subscan/model"
 	"github.com/itering/subscan/util"
@@ -187,6 +188,7 @@ func (s *Service) GetExtrinsicList(page, row int, order string, query ...string)
 	list, count := s.dao.GetExtrinsicList(c, page, row, order, query...)
 	var ejs []*model.ChainExtrinsicJson
 	for _, extrinsic := range list {
+		fmt.Println(extrinsic.AccountId)
 		ejs = append(ejs, s.dao.ExtrinsicsAsJson(&extrinsic))
 	}
 	return ejs, count
